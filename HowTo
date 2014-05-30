@@ -1,0 +1,15 @@
+In Tulip, choose the graph you want to decompose.
+
+Launch the dagTransformation.py script on this graph.
+It will produce a series of graphs, and you want to continue your analysis based on the subgraph 3.meta
+This subgraph contains the meta nodes of equivalent nodes, and proposes a formal DAG tranformation of you initial graph.
+
+Then launch the spineDecomposition.py script on the 3.meta graph.
+This script will recursively extract the spines and write a json file of the different steps adopted.
+TODO: in this file, keep track of what is a previously defined meta node (easy)
+keep track of the direct neighborhood of a spine, so when a node is disconnected by removal of a spine, we can know by which spine(s) it is completely subsumed and related to
+
+Finally launch reconstruct.py on a new graph with given the adress of the previously generated json file.
+This will generate the final view.
+TODO: draw the nodes of the treemap view
+add up links on top of the view depending on the different spines a node is connected to, because a node can depend on different connected components of a spine
